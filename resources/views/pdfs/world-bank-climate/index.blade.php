@@ -34,7 +34,7 @@
         .ft10{font-size:34px; font-family:Times;color:#63c13d;}
         .ft11{font-size:78px; font-family:'Franklin Gothic', sans-serif; color:#ffffff;}
         .ft12{font-size:60px; font-weight: 400; font-family:'Franklin Gothic Medium', sans-serif; color:#ffffff; white-space: pre-wrap}
-        .ft13{font-size:40px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:#ffffff; white-space: pre-wrap; max-width: 460px;}
+        .ft13{font-size:30px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:#ffffff; white-space: pre-wrap; max-width: 460px;}
         .ft14{font-size:25px; font-weight: bold; font-family:'korolev medium', sans-serif; color:#63c13d; white-space: pre-wrap;}
         .ft18{font-size:34px; font-family: Arial, Helvetica, sans-serif; color:#231f20;}
     </style>
@@ -44,8 +44,8 @@
         <img width="793" height="1103" src="{{ public_path('assets/world-bank-climate/img/target001.png') }}" alt="background image"/>
         <p style="position:absolute;top:126px;left:276px;white-space:nowrap" class="ft11">KENYA</p>
         <p style="position:absolute;top:790px;left:200px;" class="ft12">{{ $visitor->name }}</p>
-        <p style="position:absolute;top:870px;left:200px;" class="ft14">{{ Str::upper($visitor->Role) }}</p>
-        <p style="position:absolute;top:950px;left:200px;" class="ft13"><i>{{ $visitor->Company }}</i></p>
+        <p style="position:absolute;top:850px;left:120px;" class="ft14">{{ Str::upper($visitor->Role) }}</p>
+        <p style="position:absolute;top:950px;left:120px;" class="ft13"><i>{{ $visitor->Company }}</i></p>
         <p style="position:absolute;top:510px;left:268px;white-space:nowrap" class="ft18">
             <img class="qrcodeImg" src="data:image/png;base64,{!! DNS2D::getBarcodePNG((string) $visitor->id, 'QRCODE', 12.4, 12.4) !!}" />
         </p>
