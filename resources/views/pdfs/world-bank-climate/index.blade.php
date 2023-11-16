@@ -43,9 +43,9 @@
     <div style="position:relative;width:793px;height:1103px;">
         <img width="793" height="1103" src="{{ public_path('assets/world-bank-climate/img/target001.png') }}" alt="background image"/>
         <p style="position:absolute;top:126px;left:276px;white-space:nowrap" class="ft11">KENYA</p>
-        <p style="position:absolute;top:790px;left:200px;" class="ft12">{{ $visitor->name }}</p>
-        <p style="position:absolute;top:850px;left:120px;" class="ft14">{{ Str::upper($visitor->Role) }}</p>
-        <p style="position:absolute;top:950px;left:120px;" class="ft13"><i>{{ $visitor->Company }}</i></p>
+        {{-- <p style="position:absolute;top:790px;left:200px;" class="ft12">{{ $visitor->name }}</p> --}}
+        {{-- <p style="position:absolute;top:850px;left:120px;" class="ft14">{{ Str::upper($visitor->Role) }}</p> --}}
+        {{-- <p style="position:absolute;top:950px;left:120px;" class="ft13"><i>{{ $visitor->Company }}</i></p> --}}
         <p style="position:absolute;top:510px;left:268px;white-space:nowrap" class="ft18">
             <img class="qrcodeImg" src="data:image/png;base64,{!! DNS2D::getBarcodePNG((string) $visitor->id, 'QRCODE', 12.4, 12.4) !!}" />
         </p>
