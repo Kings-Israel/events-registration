@@ -28,7 +28,7 @@
         p {margin: 0; padding: 0;}
         .ft10{font-size:34px;font-family:Times;color:#63c13d;}
         .ft11{font-size:78px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color:#ffffff;}
-        .ft12{font-size:60px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color:#ffffff; text-align: center}
+        .ft12{font-size:60px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color:#ffffff; white-space: pre-wrap}
         .ft13{font-size:40px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color:#ffffff; white-space: pre-wrap}
         .ft14{font-size:25px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color:#63c13d; white-space: pre-wrap}
         .ft18{font-size:34px;font-family:Arial, Helvetica, sans-serif;color:#231f20;}
@@ -38,7 +38,7 @@
     <div style="position:relative;width:793px;height:1103px;">
         <img width="793" height="1103" src="{{ public_path('assets/world-bank-climate/img/target001.png') }}" alt="background image"/>
         <p style="position:absolute;top:126px;left:276px;white-space:nowrap" class="ft11">KENYA</p>
-        <p style="position:absolute;top:790px;left:170px; text-align:center" class="ft12">{{ $visitor->name }}</p>
+        <p style="position:absolute;top:790px;left:200px;" class="ft12">{{ $visitor->name }}</p>
         <p style="position:absolute;top:870px;left:200px;" class="ft13"><i>{{ $visitor->Company }}</i></p>
         <p style="position:absolute;top:970px;left:200px;" class="ft14">{{ $visitor->Role }}</p>
         <p style="position:absolute;top:510px;left:268px;white-space:nowrap" class="ft18">
