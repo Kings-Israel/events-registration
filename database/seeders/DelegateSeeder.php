@@ -14,11 +14,9 @@ class DelegateSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 24; $i++) {
+        for ($i = 1; $i <= 50; $i++) {
             Visitor::create([
-                'name' => 'Walk in '.$i,
-                'category' => 'Delegate',
-                'Country' => 'Kenya',
+                'name' => 'Visitor '.$i,
             ]);
         }
     }
