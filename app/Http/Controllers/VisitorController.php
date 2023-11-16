@@ -144,7 +144,7 @@ class VisitorController extends Controller
         // $pdf = Pdf::loadView('guest-pdf', compact('visitor'));
         $pdf = Pdf::loadView('pdfs.world-bank-climate.index', compact('visitor'));
 
-        return $pdf->stream('visitor.pdf');
+        return $pdf->stream($visitor->name.'.pdf');
 
         // return view('pdfs.world-bank-climate.index', compact('visitor'));
     }
