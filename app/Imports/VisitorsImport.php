@@ -12,7 +12,7 @@ class VisitorsImport implements ToModel, WithStartRow
 {
     public function startRow(): int
     {
-        return 2;
+        return 3;
     }
 
     /**
@@ -20,12 +20,22 @@ class VisitorsImport implements ToModel, WithStartRow
     */
     public function model(array $row)
     {
-        return new Visitor([
-            // 'category' => $row[0],
-            'name' => $row[1],
-            'Company' => $row[2] != '' ? $row[2] : NULL,
-            'Role' => $row[3] != '' ? $row[3] : NULL,
-            // 'Country' => $row[3],
-        ]);
+        if ($row[1] != '') {
+            $visitors = Visitor::all()->pluck('name');
+
+            $is_uploaded = $visitors->contains(function ($visitor) use ($row) {
+                return strtolower($visitor) == strtolower($row[1]);
+            });
+
+            if (!$is_uploaded) {
+                return new Visitor([
+                    // 'category' => $row[0],
+                    'name' => $row[1],
+                    'Company' => $row[2] != '' ? $row[2] : NULL,
+                    'Role' => $row[3] && $row[3] != '' ? $row[3] : NULL,
+                    // 'Country' => $row[3],
+                ]);
+            }
+        }
     }
 }

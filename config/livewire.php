@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => 'http://172.104.245.14/events-registration',
+    'asset_url' => env('APP_ENV') == 'production' ? 'http://172.104.245.14/events-registration' : '',
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'app_url' => 'http://172.104.245.14/events-registration',
+    'app_url' => env('APP_ENV') == 'production' ? 'http://172.104.245.14/events-registration' : '',
 
     /*
     |--------------------------------------------------------------------------
