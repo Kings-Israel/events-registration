@@ -21,10 +21,11 @@ class VisitorsImport implements ToModel, WithStartRow
     public function model(array $row)
     {
         return new Visitor([
-            'category' => $row[0],
+            // 'category' => $row[0],
             'name' => $row[1],
-            'Role' => $row[2],
-            'Country' => $row[3],
+            'Company' => $row[2],
+            'Role' => $row[3],
+            // 'Country' => $row[3],
         ]);
     }
 }

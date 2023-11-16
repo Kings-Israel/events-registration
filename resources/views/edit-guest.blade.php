@@ -14,7 +14,7 @@
 
         <form method="POST" action="{{ route('update-guest', ['visitor' => $guest]) }}">
             @csrf
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <x-label for="category" :value="__('Category')" />
 
                 <x-input id="category"
@@ -24,7 +24,7 @@
                          required
                          autocomplete="category"
                          value="{{ $guest->category }}"></x-input>
-            </div>
+            </div> --}}
 
             <div>
                 <x-label for="name" :value="__('Guest Full Name')" />
@@ -40,7 +40,7 @@
                          type="text"
                          name="company"
                          autocomplete="company"
-                         value="{{ $guest->company }}"></x-input>
+                         value="{{ $guest->Company }}"></x-input>
             </div>
 
             <div class="mt-4">
@@ -54,7 +54,7 @@
                          value="{{ $guest->Role }}"></x-input>
             </div>
 
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <x-label for="country" :value="__('Country')" />
 
                 <x-input id="country" class="block mt-1 w-full"
@@ -63,7 +63,7 @@
                          required
                          autocomplete="country"
                          value="{{ $guest->Country }}"></x-input>
-            </div>
+            </div> --}}
 
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-4">

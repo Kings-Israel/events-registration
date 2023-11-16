@@ -22,9 +22,9 @@
                 <th class=" bg-grey-lightest p-4 pl-1 font-bold uppercase text-sm text-grey-dark border-b border-grey-light text-left">
                     {{ __('Title') }}
                 </th>
-                <th class="bg-grey-lightest p-4 pl-1 font-bold uppercase text-sm text-grey-dark border-b border-grey-light text-left">
+                {{-- <th class="bg-grey-lightest p-4 pl-1 font-bold uppercase text-sm text-grey-dark border-b border-grey-light text-left">
                     {{ __('Category') }}
-                </th>
+                </th> --}}
                 <th class="bg-grey-lightest p-4 pl-1 font-bold uppercase text-sm text-grey-dark border-b border-grey-light text-left">
                     {{ __('Actions') }}
                 </th>
@@ -43,11 +43,11 @@
                             {{ $guest->Role ?? 'NA' }}
                         </div>
                     </td>
-                    <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-1 text-slate-500 dark:text-slate-400">
+                    {{-- <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-1 text-slate-500 dark:text-slate-400">
                         <div class="text-sm text-gray-200">
                             {{ Str::limit($guest->category, 50) ?? '' }}
                         </div>
-                    </td>
+                    </td> --}}
                     <td class="border-b border-slate-100 dark:border-slate-700">
                         <div class="flex justify-between px-2 w-full">
                             <a href="{{ route('visitor.view', $guest->id) }}">

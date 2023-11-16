@@ -35,10 +35,10 @@ class VisitorController extends Controller
         $visitor_details = [
             'salutation' => $request->has('salutation') && $request->salutation != '' ? $request->salutation : NULL,
             'name' => $request->name,
-            'company' => $request->has('company') && $request->company != '' ? $request->company : NULL,
-            'category' => $request->category,
-            'role' => $request->has('role') && $request->role != '' ? $request->role : NULL,
-            'country' => $request->has('country') && $request->country != '' ? $request->country : NULL,
+            'Company' => $request->has('company') && $request->company != '' ? $request->company : NULL,
+            // 'category' => $request->category,
+            'Role' => $request->has('role') && $request->role != '' ? $request->role : NULL,
+            // 'country' => $request->has('country') && $request->country != '' ? $request->country : NULL,
         ];
 
         $visitor = Visitor::create($visitor_details);
@@ -141,11 +141,11 @@ class VisitorController extends Controller
     {
         $visitor = Visitor::find($id);
 
-        $pdf = Pdf::loadView('guest-pdf', compact('visitor'));
-//         $pdf = Pdf::loadView('pdf-test', compact('visitor'));
+        // $pdf = Pdf::loadView('guest-pdf', compact('visitor'));
+        $pdf = Pdf::loadView('pdfs.world-bank-climate.index', compact('visitor'));
 
-        return $pdf->stream($visitor->name.'.pdf');
+        return $pdf->stream('visitor.pdf');
 
-//        return view('pdf-test', compact('visitor'));
+        // return view('pdfs.world-bank-climate.index', compact('visitor'));
     }
 }

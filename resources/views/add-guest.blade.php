@@ -29,7 +29,7 @@
                 </select>
             </div>
 
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <x-label for="category" :value="__('Category')" />
 
                 <x-input id="category"
@@ -39,7 +39,7 @@
                          required
                          autocomplete="category"
                 />
-            </div>
+            </div> --}}
 
             <div>
                 <x-label for="name" :value="__('Guest Full Name')" />
@@ -67,14 +67,14 @@
                                 required autocomplete="role" />
             </div>
 
-            <div class="mt-4">
+            {{-- <div class="mt-4">
                 <x-label for="country" :value="__('Country')" />
 
                 <x-input id="country" class="block mt-1 w-full"
                                 type="text"
                                 name="country"
                                 required autocomplete="country" />
-            </div>
+            </div> --}}
 
             <div class="flex items-center justify-end mt-4">
 
@@ -87,8 +87,6 @@
                         {{ __('Cancel') }}
                     </a>
                 </x-button>
-
-
             </div>
         </form>
     </x-auth-card>

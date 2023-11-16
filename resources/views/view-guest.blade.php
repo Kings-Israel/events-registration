@@ -5,43 +5,47 @@
         </h2>
     </x-slot>
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-center">
-                <x-info-card class="mr-2">
-                    <x-slot name="title">Visitor</x-slot>
-                    <div>
-                        Name: <strong>{{ $visitor->name ?? ''}}</strong>
-                    </div>
-                    <div class="mt-4">
-                        Title: <strong>{{ $visitor->Role ?? '' }}</strong>
-                    </div>
-
-                    <div class="mt-4">
-                        Country: <strong>{{ $visitor->Country ?? '' }}</strong>
-                    </div>
-
-                    <div class="mt-4">
-                        Registered On: {{ $visitor->created_at->format('D M Y') }}
-                    </div>
-
-                    <div class="mt-4 flex justify-between">
-                        <a href="{{route('guest-pdf', $visitor->id)}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
-                            View Ticket
-                        </a>
-                        <a href="{{ route('edit-guest', ['visitor' => $visitor]) }}">
-                            <x-button class="text-green-600" style="background: darkcyan">Edit</x-button>
-                        </a>
-                    </div>
-                </x-info-card>
-                <x-info-card>
-                    <x-slot name="title">QR CODE</x-slot>
-                    <div class="flex justify-center">
+            <div class="">
+                <div>
+                    <x-info-card>
+                        <x-slot name="title">Visitor</x-slot>
                         <div>
-                            <a href="{{ route('visitor.download', $visitor->id) }}" download>
-                                {!! DNS2D::getBarcodeHTML((string) $visitor->id." ".$visitor->name, 'QRCODE', 7.8, 7.8) !!}
+                            Name: <strong>{{ $visitor->name ?? ''}}</strong>
+                        </div>
+                        <div class="mt-4">
+                            Title: <strong>{{ $visitor->Role ?? '' }}</strong>
+                        </div>
+
+                        <div class="mt-4">
+                            Organization: <strong>{{ $visitor->Company ?? '' }}</strong>
+                        </div>
+
+                        <div class="mt-4">
+                            Registered On: {{ $visitor->created_at->format('D d M Y') }}
+                        </div>
+
+                        <div class="mt-4 flex justify-between">
+                            <a href="{{route('guest-pdf', $visitor->id)}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                View Ticket
+                            </a>
+                            <a href="{{ route('edit-guest', ['visitor' => $visitor]) }}">
+                                <x-button class="text-green-600" style="background: darkcyan">Edit</x-button>
                             </a>
                         </div>
-                    </div>
-                </x-info-card>
+                    </x-info-card>
+                </div>
+                <div class="mt-2">
+                    <x-info-card>
+                        <x-slot name="title">QR CODE</x-slot>
+                        <div class="flex justify-center">
+                            <div>
+                                <a href="{{ route('visitor.download', $visitor->id) }}" download>
+                                    {!! DNS2D::getBarcodeHTML((string) $visitor->id." ".$visitor->name, 'QRCODE', 7.8, 7.8) !!}
+                                </a>
+                            </div>
+                        </div>
+                    </x-info-card>
+                </div>
             </div>
             <br>
             <h3 class="text-center text-lg">Sessions Attended</h3>
@@ -76,14 +80,6 @@
                     @endforeach
                     </tbody>
                 </table>
-{{--                <x-info-card>--}}
-{{--                    <x-slot name="title">Sessions Attended</x-slot>--}}
-{{--                    @forelse ($visitor->sessions as $count => $session)--}}
-{{--                        {{ $count + 1 }}. {{ $session->topic }} - {{ Str::limit($session->topic, 20) }} - {{ $session->created_at->format('D M Y') }} - <a href="{{ route('view-session', $session->id) }}"><x-button>View</x-button></a><br>--}}
-{{--                    @empty--}}
-{{--                        <p>No Sessions Attended</p>--}}
-{{--                    @endforelse--}}
-{{--                </x-info-card>--}}
             </div>
         </div>
 </x-app-layout>
