@@ -1,10 +1,12 @@
 {
-    "titillium web": {
-        "900": "titillium_web_900_2a22f98c1a76c71b02d9d4ead1bda281",
-<<<<<<< HEAD
-        "normal": "\/var\/www\/html\/events-registration\/storage\/fonts\/titillium_web_normal_2cdc3fece50613c2ee720daaab9c6fd7"
-=======
-        "normal": "C:\\xampp\\htdocs\\projects\\laravel\\event-register\\storage\\fonts\/titillium_web_normal_2cdc3fece50613c2ee720daaab9c6fd7"
->>>>>>> 6cf05e9b92a298e0c05d17eed62d019c39f79b9d
+    "korolev medium": {
+        "normal": "korolev_medium_normal_892e8d70f8c020a3d3c4ccc97fb891fa"
+    },
+    "franklingothic-book_16": {
+        "normal": "franklingothic_book_16_normal_8f47019e1a6e5258a6798c8eea96277b"
+    },
+    "franklingothic-mediumitalic_1e": {
+        "600": "C:\\xampp\\htdocs\\projects\\laravel\\event-register\\storage\\fonts\/franklingothic_mediumitalic_1e_600_76a4e41ffa07c65897276ce1949e5ec3",
+        "normal": "franklingothic_mediumitalic_1e_normal_76a4e41ffa07c65897276ce1949e5ec3"
     }
 }
