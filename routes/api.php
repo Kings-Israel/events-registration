@@ -15,17 +15,3 @@ Route::post('/session/store', [SessionController::class, 'store']);
 Route::post('/visitor/store', [VisitorController::class, 'store']);
 Route::post('/visitor/session/store', [VisitorController::class, 'registerToSession']);
 
-Route::get('/sessions/attendance/update', function () {
-    $visitors = Visitor::whereDate('created_at', '2023-11-17')->get();
-
-    foreach ($visitors as $visitor) {
-        $attendance = DB::table('visitor_session')->get()->pluck('visitor_id');
-
-        if (!collect($attendance)->contains($visitor->id)) {
-            DB::table('visitor_session')->insert([
-                'session_id' => 1,
-                'visitor_id' => $visitor->id
-            ]);
-        }
-    }
-});

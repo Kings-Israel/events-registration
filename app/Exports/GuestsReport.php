@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Session;
 use App\Models\Visitor;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -26,6 +27,10 @@ class GuestsReport implements FromView
         switch (array_keys($this->export_params)[0]):
             case 'full_report':
                 $visitors = Visitor::all();
+                break;
+            case 'attendees_report':
+                $visitors_ids = DB::table('visitor_session')->get()->pluck('visitor_id');
+                $visitors = Visitor::whereIn('id', $visitors_ids)->get();
                 break;
             case 'session_report':
                 $session = Session::with('visitors')->find($this->export_params['session_report']);
