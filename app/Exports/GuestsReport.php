@@ -32,6 +32,9 @@ class GuestsReport implements FromView
                 $visitors_ids = DB::table('visitor_session')->get()->pluck('visitor_id');
                 $visitors = Visitor::whereIn('id', $visitors_ids)->get();
                 break;
+            case 'walk_ins':
+                $visitors = Visitor::whereDate('created_at', '2023-11-17')->get();
+                break;
             case 'session_report':
                 $session = Session::with('visitors')->find($this->export_params['session_report']);
                 $visitors = $session->visitors;

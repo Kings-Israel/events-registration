@@ -117,6 +117,8 @@ class VisitorController extends Controller
 
         $visitor->sessions()->attach([
             'session_id' => $request->session_id,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
         if ($request->wantsJson()) {

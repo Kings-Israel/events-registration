@@ -28,6 +28,9 @@
                 <a href="{{ route('report', ['attendees_report' => 'attendees_report']) }}" class="flex justify-end mt-2 mr-2">
                     <x-button class="bg-gray-800 text-cyan-50" style="background: #4a5568">All Attendees Report</x-button>
                 </a>
+                <a href="{{ route('report', ['walk_ins' => 'walk_ins']) }}" class="flex justify-end mt-2 mr-2">
+                    <x-button class="bg-gray-800 text-cyan-50" style="background: #4a5568">All Walk Ins Report</x-button>
+                </a>
             </div>
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
