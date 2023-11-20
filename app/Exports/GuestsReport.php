@@ -33,7 +33,7 @@ class GuestsReport implements FromView
                 $visitors = Visitor::whereIn('id', $visitors_ids)->get();
                 break;
             case 'walk_ins':
-                $visitors = Visitor::whereDate('created_at', '2023-11-16')->get();
+                $visitors = Visitor::whereDate('updated_at', '2023-11-17')->get();
                 break;
             case 'session_report':
                 $session = Session::with('visitors')->find($this->export_params['session_report']);
