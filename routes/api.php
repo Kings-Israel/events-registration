@@ -22,7 +22,7 @@ Route::get('/sessions/attendance/update', function () {
         $attendance = DB::table('visitor_session')->get()->pluck('visitor_id');
 
         if (!collect($attendance)->contains($visitor->id)) {
-            DB::table('visitor_session')->create([
+            DB::table('visitor_session')->insert([
                 'session_id' => 1,
                 'visitor_id' => $visitor->id
             ]);
