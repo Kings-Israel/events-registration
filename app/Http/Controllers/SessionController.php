@@ -109,8 +109,6 @@ class SessionController extends Controller
             $query[array_keys(request()->query())[1]] = request()->query()[array_keys(request()->query())[1]];
         }
 
-        dd(request()->query());
-
         return Excel::download(new GuestsReport($query), 'guest-report.xlsx');
     }
 }
